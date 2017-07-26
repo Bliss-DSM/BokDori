@@ -1,13 +1,71 @@
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <style>
-        </style>
-    </head>
-    <body style="background-color:#FF7A19!important;">
-        asdg
-    </body>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'NanumSquareR';
+            src: url('/asset/fonts/NanumSquareR.ttf')
+        }
+        
+        @font-face {
+            font-family: 'NanumSquareL';
+            src: url('/asset/fonts/NanumSquareL.ttf')
+        }
+        
+        .ui-overlay-a,
+        .ui-page-theme-a,
+        .ui-page-theme-a .ui-panel-wrapper {
+            background-color: #FF7A19!important;
+        }
+        
+        .ui-overlay-a,
+        .ui-page-theme-a,
+        .ui-page-theme-a .ui-panel-wrapper {
+            text-shadow: 0px 0px #f3f3f3;
+            color: white;
+            font-size: 42px;
+        }
+        
+        body {
+            font-family: 'NanumSquareL';
+            text-align: center;
+        }
+        .ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited{
+            color:white !important;
+        }
+        .ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a{
+            color:white !important;
+        }
+        .titletext{
+            text-decoration: none;
+        }
+        .titletext:active{
+            text-shadow: 2px 2px 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="Main">
+        <a href="#login" class = "titletext"><p style="margin-top:3em;margin-bottom:0.5em">로그인</p></a>
+        <p style="font-size:16px;opacity:0.5;">또는</p>
+        <a href="#reg" class = "titletext"><p style="margin-top:0.5em">회원가입</p></a>
+        <div style="margin-left:4%;">
+            <p style="text-align:left;font-family: 'NanumSquareL';opacity:0.5;">
+                당신의<br>효율적인<br>복습을 위한<br>세계 유일<br>복습 관리 앱.
+            </p>
+        </div>
+    </div>
+    <div data-role="page" id="login">
+    
+    </div>
+    <div data-role="page" id="reg">
+    
+    </div>
+</body>
+
 </html>
