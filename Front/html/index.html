@@ -36,12 +36,16 @@
             text-shadow: 0px 0px white;
         }
         
-        #myPanel {
+        #myPanel {}
+        /* panal의 text 그림자 없애는 코드 */
+        
+        .ui-body-a .ui-body-inherit,
+        .ui-body-a .ui-btn {
+            text-shadow: 0px 0px white !important;
         }
         
-        /* panal의 text 그림자 없애는 코드 */
-        .ui-body-a .ui-body-inherit, .ui-body-a .ui-btn {
-            text-shadow: 0px 0px white !important;
+        .ui-content {
+            padding: 0px !important;
         }
         
         .ui-header {
@@ -55,7 +59,6 @@
         .ui-panel {
             width: 15em;
         }
-        
         
         .ui-panel.ui-panel-position-right {
             width: 20em;
@@ -276,8 +279,49 @@
         <!-- /header -->
 
         <div role="main" class="ui-content">
-            <p>내 정보</p>
-            <p><a href="#bar">Back to bar</a></p>
+            <a class="ui-btn" style="text-align:left">
+                <h2>아이디</h2>
+                <p>NULL</p>
+            </a>
+            <hr>
+            <a href="#popupSchool" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn" style="text-align:left">
+                <h2>학교</h2>
+                <p>NULL</p>
+            </a>
+            <div data-role="popup" id="popupSchool" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:400px;">
+                <div data-role="header">
+
+                    <h1>아이디</h1>
+                </div>
+
+                <div role="main" class="ui-content">
+                    <h2>학교</h2>
+                    <input type="text" name="School" id="un" value="" placeholder="학교를 입력하세요" data-theme="a">
+                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
+                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+                </div>
+            </div>
+            <hr>
+            <a href="#popupGrade" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn" style="text-align:left">
+                <h2>학년/반</h2>
+                <p>NULL</p>
+            </a>
+            <div data-role="popup" id="popupGrade" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:300px;">
+                <div data-role="header">
+
+                    <h1>학년/반 수정</h1>
+                </div>
+
+                <div role="main" class="ui-content">
+                    <h2>학년</h2>
+                    <input type="text" name="grade" id="un" value="" data-theme="a">
+                    <h2>반</h2>
+                    <input type="text" name="class" id="un" value="" data-theme="a">
+                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
+                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+                </div>
+            </div>
+            <hr>
         </div>
         <!-- /content -->
 
