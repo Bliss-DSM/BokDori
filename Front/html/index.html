@@ -9,14 +9,21 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <style>
+        body {
+            font-family: "NanumSquare" !important;
+            font-weight: 400 !important;
+        }
+        
         @font-face {
-            font-family: 'NanumSquareR';
+            font-family: 'NanumSquare';
             src: url('/asset/fonts/NanumSquareR.ttf')
         }
         
         .ui-btn {
             background-color: rgba(0, 0, 0, 0) !important;
             border: none !important;
+            font-family: "NanumSquare" !important;
+            font-weight: 400 !important;
         }
         
         .ui-page .ui-header {
@@ -26,6 +33,15 @@
         body:after {
             text-decoration: none;
             font-family: 'NanumSquareR' !important;
+            text-shadow: 0px 0px white;
+        }
+        
+        #myPanel {
+        }
+        
+        /* panal의 text 그림자 없애는 코드 */
+        .ui-body-a .ui-body-inherit, .ui-body-a .ui-btn {
+            text-shadow: 0px 0px white !important;
         }
         
         .ui-header {
@@ -40,12 +56,17 @@
             width: 15em;
         }
         
+        
         .ui-panel.ui-panel-position-right {
             width: 20em;
         }
         
         .ui-panel.ui-panel-closed {
             width: 0;
+        }
+        
+        .ui-listview>li p {
+            margin: 2px;
         }
         
         .ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
@@ -98,7 +119,7 @@
 
     </style>
     <script>
-        var panel = '<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel"><ul data-role="listview"><li data-icon="delete"><a href="#" data-rel="close">Close</a></li><li><p style="font-size:30px;color:#FF7A19">메뉴</p></li><li><a href="#Today">오늘의 복습</a></li><li><a href="#Timetable">시간표</a></li><li><a href="#Memo">메모</a></li><hr><li><a href="#Myinfo">내 정보</a></li><li><a href="#Logout">로그아웃</a></li></ul></div>';
+        var panel = '<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel"><ul data-role="listview"><li><p style="font-size:20px;color:#FF7A19">메뉴</p></li><li><a href="#Today" class="ui-btn">오늘의 복습</a></li><li><a href="#Timetable" class="ui-btn">시간표</a></li><li><a href="#Memo" class="ui-btn">메모</a></li><hr width=90% style="border: 0.5px solid #ABABAB"><li><a href="#Myinfo" class="ui-btn">내 정보</a></li><li><a href="#Logout" class="ui-btn">로그아웃</a></li></ul></div>';
         $(document).one('pagebeforecreate', function() {
             $.mobile.pageContainer.prepend(panel);
             $("#myPanel").panel().enhanceWithin();
@@ -113,7 +134,8 @@
 
         <div data-role="header">
             <h1>오늘의 복습</h1>
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
+            <!-- <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a> -->
+            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon"></a>
         </div>
         <!-- /header -->
 
