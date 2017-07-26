@@ -3,7 +3,8 @@
 
 <head>
     <title>Page Title</title>
-
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -129,8 +130,9 @@
             font-size: 20px;
             margin: 0;
         }
-        .popuppp{
-            color:#FF7A19;
+        
+        .popuppp {
+            color: #FF7A19;
         }
     </style>
     <script>
@@ -139,7 +141,6 @@
             $.mobile.pageContainer.prepend(panel);
             $("#myPanel").panel().enhanceWithin();
         });
-
     </script>
 </head>
 
@@ -300,7 +301,7 @@
                 <h2>학교</h2>
                 <p>NULL</p>
             </a>
-            <div data-role="popup" id="popupSchool" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:400px;">
+            <div data-role="popup" id="popupSchool" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:300px;">
                 <div class="popuppp">
                     <div role="main" class="ui-content">
                         <h1>학교</h1>
