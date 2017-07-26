@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'NanumSquareR';
+            src: url('/asset/fonts/NanumSquareR.ttf')
+        }
+        
+        .ui-btn {
+            background-color: rgba(0, 0, 0, 0) !important;
+            border: none !important;
+        }
+        
+        .ui-page .ui-header {
+            background: #FF7A19!important;
+        }
+        
+        body:after{
+            text-decoration: none;
+            font-family: 'NanumSquareR' !important;
+        }
+        
+        .ui-header {
+            font-size: 20px;
+        }
+        
+        .ui-btn-icon-notext {
+            margin-top: .4em !important;
+        }
+        
+        .ui-panel {
+            width: 15em;
+        }
+        
+        .ui-panel.ui-panel-position-right {
+            width: 20em;
+        }
+        
+        .ui-panel.ui-panel-closed {
+            width: 0;
+        }
+        
+        .ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
+        .ui-panel-animate.ui-panel-position-left.ui-panel-display-push {
+            -webkit-transform: translate3d(-15em, 0, 0);
+            -moz-transform: translate3d(-15em, 0, 0);
+            transform: translate3d(-15em, 0, 0)
+        }
+        
+        .ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay,
+        .ui-panel-animate.ui-panel-position-right.ui-panel-display-push {
+            -webkit-transform: translate3d(20em, 0, 0);
+            -moz-transform: translate3d(20em, 0, 0);
+            transform: translate3d(20em, 0, 0)
+        }
+        
+        .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal,
+        .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
+        .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal,
+        .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+            -webkit-transform: translate3d(15em, 0, 0);
+            -moz-transform: translate3d(15em, 0, 0);
+            transform: translate3d(15em, 0, 0)
+        }
+        
+        .ui-panel-animate.ui-panel-page-content-position-left {
+            -webkit-transform: translate3d(15em, 0, 0);
+            -moz-transform: translate3d(15em, 0, 0);
+            transform: translate3d(15em, 0, 0);
+        }
+        
+        .ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal,
+        .ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
+        .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal,
+        .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+            -webkit-transform: translate3d(-20em, 0, 0);
+            -moz-transform: translate3d(-20em, 0, 0);
+            transform: translate3d(-20em, 0, 0)
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Start of first page -->
+    <div data-role="page" id="Timetable">
+        <div data-role="header">
+            <h1>시간표</h1>
+            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
+        </div>
+        <!-- /header -->
+        <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel">
+            <ul data-role="listview">
+                <li data-icon="delete">
+                    <a href="#" data-rel="close">Close</a>
+                </li>
+                <h1>기능</h1>
+                <li><a href="#Timetable">시간표</a></li>
+                <li><a href="#Memo">메모</a></li>
+                <li><a href="#Schedule">일정</a></li>
+                <h1>계정</h1>
+                <li><a href="#Accountmg">계정관리</a></li>
+                <li><a href="#Login">로그인</a></li>
+            </ul>
+        </div>
+        <div role="main" class="ui-content">
+            <TABLE cellSpacing=1 cellPadding=2 width="100%" border=1>
+<TBODY align=center>
+<TR bgcolor=#28CC80>
+<TD bgcolor=white></TD>
+<TD WIDTH="50" HEIGHT="50"><span style="color:white">월</span></TD>
+<TD WIDTH="50" HEIGHT="50"><span style="color:white">화</span></TD>
+<TD WIDTH="50" HEIGHT="50"><span style="color:white">수</span></TD>
+<TD WIDTH="50" HEIGHT="50"><span style="color:white">목</span></TD>
+<TD WIDTH="50" HEIGHT="50"><span style="color:white">금</span></TD></TR>
+<TR >
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">1</span></TD>
+<TD bgcolor=#343166 WIDTH="50" HEIGHT="50"><span style="color:white">창체</span></TD>
+<TD bgcolor=#FF2A1C WIDTH="50" HEIGHT="50"><span style="color:white">체육</span></TD>
+<TD bgcolor=#FF951A WIDTH="50" HEIGHT="50"><span style="color:white">문학</span></TD>
+<TD bgcolor=#FF2A1C WIDTH="50" HEIGHT="50"><span style="color:white">체육</span></TD>
+<TD bgcolor=#00A0B0 WIDTH="50" HEIGHT="50"><span style="color:white">미적분</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">2</TD>
+<TD bgcolor=#FF5F1C WIDTH="50" HEIGHT="50"><span style="color:white">영어</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#40662D WIDTH="50" HEIGHT="50"><span style="color:white">미술</span></TD>
+<TD bgcolor=#00A0B0 WIDTH="50" HEIGHT="50"><span style="color:white">미적분</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">3</TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#40662D WIDTH="50" HEIGHT="50"><span style="color:white">미술</span></TD>
+<TD bgcolor=#2D5566 WIDTH="50" HEIGHT="50"><span style="color:white">네트워크</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">4</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">자바</span></TD>
+<TD bgcolor=#C02942 WIDTH="50" HEIGHT="50"><span style="color:white">문학</span></TD>
+<TD bgcolor=#FF5F1C WIDTH="50" HEIGHT="50"><span style="color:white">영어</span></TD>
+<TD bgcolor=#FF951A WIDTH="50" HEIGHT="50"><span style="color:white">미술</span></TD>
+<TD bgcolor=#663E2D WIDTH="50" HEIGHT="50"><span style="color:white">직업</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">5교시</span></TD>
+<TD bgcolor=#5E3366 WIDTH="50" HEIGHT="50"><span style="color:white">한국사</span></TD>
+<TD bgcolor=#5E3366 WIDTH="50" HEIGHT="50"><span style="color:white">한국사</span></TD>
+<TD bgcolor=#FF5F1C WIDTH="50" HEIGHT="50"><span style="color:white">영어</span></TD>
+<TD bgcolor=#343166 WIDTH="50" HEIGHT="50"><span style="color:white">창체</span></TD>
+<TD bgcolor=#FF951A WIDTH="50" HEIGHT="50"><span style="color:white">문학</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">6교시</span></TD>
+<TD bgcolor=#2D6647 WIDTH="50" HEIGHT="50"><span style="color:white">DB</span></TD>
+<TD bgcolor=#2D5566 WIDTH="50" HEIGHT="50"><span style="color:white">네트워크</span></TD>
+<TD bgcolor=#2D6647 WIDTH="50" HEIGHT="50"><span style="color:white">DB</span></TD>
+<TD bgcolor=#343166 WIDTH="50" HEIGHT="50"><span style="color:white">창체</span></TD>
+<TD bgcolor=#5E3366 WIDTH="50" HEIGHT="50"><span style="color:white">한국사</span></TD></TR>
+<TR>
+<TD bgcolor=#21E3C0 WIDTH="50" HEIGHT="50"><span style="color:white">7교시</span></TD>
+<TD bgcolor=#2D6647 WIDTH="50" HEIGHT="50"><span style="color:white">DB</span></TD>
+<TD bgcolor=#2D5566 WIDTH="50" HEIGHT="50"><span style="color:white">네트워크</span></TD>
+<TD bgcolor=#663E2D WIDTH="50" HEIGHT="50"><span style="color:white">직업</span></TD>
+<TD bgcolor=#343166 WIDTH="50" HEIGHT="50"><span style="color:white">창체</span></TD>
+<TD>　 </TD></TR>
+<TR>
+
+</TR></TBODY></TABLE>
+        </div>
+        <!-- /content -->
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="Memo">
+
+        <div data-role="header">
+            <h1>메모오오</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>메모오오오</p>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+
+    <div data-role="page" id="Schedule">
+
+        <div data-role="header">
+            <h1>일저어엉</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>ㅁㄴ옴ㄴㅇ</p>
+            <p><a href="#bar">Back to bar</a></p>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <div data-role="page" id="Accountmg">
+
+        <div data-role="header">
+            <h1>계정관리이이</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>ㅁㄴ옴ㄴㅇ</p>
+            <p><a href="#bar">Back to bar</a></p>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <div data-role="page" id="Login">
+
+        <div data-role="header">
+            <h1>로그인ㄴㄴ</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p>ㅁㄴ옴ㄴㅇ</p>
+            <p><a href="#bar">Back to bar</a></p>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+</body>
+
+</html>
