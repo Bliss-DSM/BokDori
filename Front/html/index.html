@@ -83,12 +83,15 @@
         .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
             -webkit-transform: translate3d(-20em, 0, 0);
             -moz-transform: translate3d(-20em, 0, 0);
-            transform: translate3d(-20em, 0, 0)
+            transform: translate3d(-20em, 0, 0);
         }
-
+        .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit{
+            text-shadow: 0px 0px #ff0000 !important;
+            color : white !important;
+        }
     </style>
     <script>
-        var panel = '<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel"><ul data-role="listview"><li data-icon="delete"><a href="#" data-rel="close">Close</a></li><h1>메뉴</h1><li><a href="#Today">오늘의 복습</a></li><li><a href="#Timetable">시간표</a></li><li><a href="#Memo">메모</a></li><h1>계정</h1><li><a href="#Myinfo">내 정보</a></li><li><a href="#Login">로그인</a></li></ul></div>';
+        var panel = '<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel"><ul data-role="listview"><li data-icon="delete"><a href="#" data-rel="close">Close</a></li><li><p style="font-size:30px;color:#FF7A19">메뉴</p></li><li><a href="#Today">오늘의 복습</a></li><li><a href="#Timetable">시간표</a></li><li><a href="#Memo">메모</a></li><hr><li><a href="#Myinfo">내 정보</a></li><li><a href="#Login">로그인</a></li></ul></div>';
         $(document).one('pagebeforecreate', function() {
             $.mobile.pageContainer.prepend(panel);
             $("#myPanel").panel().enhanceWithin();
