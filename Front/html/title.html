@@ -92,6 +92,9 @@
         .ui-content input{
             font-size: 25px;
         }
+        grade.ui-input-text{ 
+            width: 50px !important;
+        }
     </style>
 </head>
 
@@ -138,9 +141,10 @@
             <input type="password" data-clear-btn="true" name="reg_password_check" id="password_check" value="">
             <p>학교</p>
             <input type="text" data-clear-btn="true" name="school" id="school" value="">
-            <p>학년    반</p>
-            <input type="text" data-clear-btn="true" name="grade" id="grade" value="">
-            <input type="text" data-clear-btn="true" name="class" id="class" value="">
+            <p>학년</p>
+            <input type="text" data-clear-btn="true" name="grade" id="grade" class="grade" value="">
+            <p>반</p>
+            <input type="text" data-clear-btn="true" name="class" id="class" class="class" value="">
         </div>
     </div>
 </body>
