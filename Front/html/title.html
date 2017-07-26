@@ -1,19 +1,15 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <style>
-        @font-face {
-            font-family: 'NanumSquareR';
-            src: url('/asset/fonts/NanumSquareR.ttf')
-        }
-        
-        @font-face {
-            font-family: 'NanumSquareL';
-            src: url('/asset/fonts/NanumSquareL.ttf')
+        .ui-page-theme-a a {
+            font-weight: lighter !important;
         }
         
         .ui-overlay-a,
@@ -24,14 +20,18 @@
             font-size: 42px;
         }
         
+        .ui-page-theme-a .ui-bar-inherit {
+            font-weight: 400;
+        }
+        
         #Main {
-            font-family: 'NanumSquareL';
+            font-family: 'NanumSquare'!important;
             text-align: center;
             background-color: #FF7A19!important;
         }
         
         #Login {
-            font-family: 'NanumSquareR';
+            font-family: 'NanumSquare'!important;
         }
         
         .titletext {
@@ -43,7 +43,7 @@
         }
         
         .text {
-            margin-bottom: .7em;
+            margin-bottom: 2px;
             margin-top: .7em;
             font-size: 20px;
             margin-left: 3em;
@@ -57,14 +57,15 @@
         
         .ui-header .ui-btn-right {
             font-size: 20px;
-            top:0;
-            text-shadow:0px 0px 0px #FFFFFF;
+            top: 0;
+            text-shadow: 0px 0px 0px #FFFFFF;
         }
         
         .ui-btn {
             background-color: rgba(0, 0, 0, 0) !important;
             color: white;
             border: none !important;
+            font-family: 'NanumSquare'!important;
         }
         
         .ui-icon-arrow-l:after {
@@ -89,35 +90,44 @@
             font-size: 15px;
             margin-bottom: 0;
         }
-        .ui-content input{
+        
+        .ui-content input {
             font-size: 25px;
         }
-        grade.ui-input-text{ 
+        
+        grade.ui-input-text {
             width: 50px !important;
         }
+
     </style>
+    <script>
+        $.mobile.page.prototype.options.domCache = true;
+
+    </script>
 </head>
 
 <body>
     <div data-role="page" id="Main">
         <a href="#login" class="titletext">
-            <p style="margin-top:3em;margin-bottom:0.5em">로그인</p>
+            <p style="margin-top:1.9em;margin-bottom:0.5em">로그인</p>
         </a>
         <p style="font-size:16px;opacity:0.5;">또는</p>
         <a href="#reg" class="titletext">
             <p style="margin-top:0.5em">회원가입</p>
         </a>
         <div style="margin-left:4%;">
-            <p style="text-align:left;font-family: 'NanumSquareL';opacity:0.5;">
+            <p style="text-align:left;opacity:0.5;margin-bottom:0">
                 당신의<br>효율적인<br>복습을 위한<br>세계 유일<br>복습 관리 앱.
             </p>
         </div>
     </div>
     <div data-role="page" id="login">
-        <div data-role="header">
+        <div data-role="header" style="height:56px;">
             <p class="text">로그인</p>
-            <a href="#Main" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-nodisc-icon">Arrow</a>
-            <a href="#" class="ui-btn">확인</a>
+            <a href="#Main" class="ui-btn">
+                <img src="prevArrow.png" width="20px" height="20px" style="margin-top: 4px;">
+            </a>
+            <a href="index.html" data-ajax="false" class="ui-btn">확인</a>
         </div>
         <div role="main" class="ui-content">
             <p>아이디</p>
@@ -127,10 +137,12 @@
         </div>
     </div>
     <div data-role="page" id="reg">
-        <div data-role="header">
+        <div data-role="header" style="height:56px;">
             <p class="text">회원가입</p>
-            <a href="#Main" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-nodisc-icon">Arrow</a>
-            <a href="#" class="ui-btn">확인</a>
+            <a href="#Main" class="ui-btn">
+                <img src="prevArrow.png" width="20px" height="20px" style="margin-top: 4px;">
+            </a>
+            <a href="title.html" data-ajax="false" class="ui-btn">확인</a>
         </div>
         <div role="main" class="ui-content">
             <p>아이디</p>

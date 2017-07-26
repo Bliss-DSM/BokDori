@@ -3,7 +3,8 @@
 
 <head>
     <title>Page Title</title>
-
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -18,7 +19,9 @@
             font-family: 'NanumSquare';
             src: url('/asset/fonts/NanumSquareR.ttf')
         }
-        
+        .ui-overlay-a, .ui-page-theme-a {
+            background-color: white !important;
+        }
         .ui-btn {
             background-color: rgba(0, 0, 0, 0) !important;
             border: none !important;
@@ -32,7 +35,7 @@
         
         body:after {
             text-decoration: none;
-            font-family: 'NanumSquareR' !important;
+            font-family: 'NanumSquare' !important;
             text-shadow: 0px 0px white;
         }
         
@@ -43,11 +46,6 @@
         .ui-body-a .ui-btn {
             text-shadow: 0px 0px white !important;
         }
-        
-        .ui-content {
-            padding: 0px !important;
-        }
-        
         .ui-header {
             font-size: 20px;
         }
@@ -119,7 +117,63 @@
             color: white !important;
             border-color:
         }
-
+        
+        #Myinfo p {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        
+        #Myinfo h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+        #mainFlex {
+            position: flex;
+            flex-direction: column;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            
+            margin-top: 16px;
+            margin-left: 4px;
+            width: calc(100% - 8px);
+            border: 1px solid black;
+            box-shadow: 2px 2px #bcbcbc;
+        }
+        
+        #cardDate, #memoTitle {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            margin-top: 8px;
+            margin-left: 16px;
+            margin-right: 16px;
+            color: #FF9900;
+        }
+        
+        #cardDateLeft, #memoTitleLeft {
+            position: absolute;
+            left: 0px;
+        }
+        
+        #cardDateRight, #more {
+            position: absolute;
+            right: 0px;
+        }
+        
+        .reviewComponent, .memoText {
+            position: relative;
+            
+            margin-left: 12px;
+            margin-right: 12px;
+            padding: 5px;
+            border-top: 1px solid #CDCDCD;
+        }
+        .popuppp {
+            color: #FF7A19;
+        }
     </style>
     <script>
         var panel = '<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="a" id="myPanel"><ul data-role="listview"><li><p style="font-size:20px;color:#FF7A19">메뉴</p></li><li><a href="#Today" class="ui-btn">오늘의 복습</a></li><li><a href="#Timetable" class="ui-btn">시간표</a></li><li><a href="#Memo" class="ui-btn">메모</a></li><hr width=90% style="border: 0.5px solid #ABABAB"><li><a href="#Myinfo" class="ui-btn">내 정보</a></li><li><a href="#Logout" class="ui-btn">로그아웃</a></li></ul></div>';
@@ -127,7 +181,6 @@
             $.mobile.pageContainer.prepend(panel);
             $("#myPanel").panel().enhanceWithin();
         });
-
     </script>
 </head>
 
@@ -136,14 +189,113 @@
     <div data-role="page" id="Today">
 
         <div data-role="header">
-            <h1>오늘의 복습</h1>
+            <h1 style="text-align:left; margin-left:60px;">오늘의 복습</h1>
             <!-- <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a> -->
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon"></a>
+            <a href="#myPanel" class="ui-btn"><img src="menuButton.png" width="20px" height="20px" style="margin-top:4px;"></a>
         </div>
         <!-- /header -->
 
         <div role="main" class="ui-content">
-            <p>복습</p>
+            <div id="mainFlex">
+               <div id="todayReviewTitleText" style="font-size:20px; text-align:center; position:relative;">
+                    <img src="backArrow.png" alt="" width="16px" height="16px" style="position:absolute; margin-left:-76px; margin-top:4px;">
+                    2017년 7월 27일
+                    <img src="nextArrow.png" alt="" width="16px" height="16px" style="position:absolute; margin-left:60px; margin-top:4px;"> 
+                </div>
+                <div>
+                    <div class="card">
+                       <div id="cardDate">
+                           <div id="cardDateLeft">2017년 06월 26일</div>
+                           <div id="cardDateRight">저번 달</div>
+                       </div>
+                       <div class="reviewComponent" style="margin-top: 26px;">
+                           2교시 영어
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           3교시 자바
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           4교시 자바
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           5교시 한국사
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           6교시 DB
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent" style="margin-bottom: 8px;">
+                           7교시 DB
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                    </div>
+                    
+                    <div class="card">
+                       <div id="cardDate">
+                           <div id="cardDateLeft">2017년 07월 19일</div>
+                           <div id="cardDateRight">저번 주</div>
+                       </div>
+                       <div class="reviewComponent" style="margin-top: 26px;">
+                           1교시 문학
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           2교시 자바
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           3교시 자바
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           4교시 영어
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           5교시 영어
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent">
+                           6교시 DB
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                       <div class="reviewComponent" style="margin-bottom: 8px;">
+                           7교시 직업
+                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /content -->
 
@@ -151,8 +303,8 @@
     </div>
     <div data-role="page" id="Timetable">
         <div data-role="header">
-            <h1>시간표</h1>
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
+            <h1 style="text-align:left; margin-left:60px;">시간표</h1>
+            <a href="#myPanel" class="ui-btn"><img src="menuButton.png" width="20px" height="20px" style="margin-top:4px;"></a>
         </div>
         <!-- /header -->
         <div role="main" class="ui-content">
@@ -240,41 +392,54 @@
     <div data-role="page" id="Memo">
 
         <div data-role="header">
-            <h1>메모오오</h1>
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
+            <h1 style="text-align:left; margin-left:60px;">메모</h1>
+            <a href="#myPanel" class="ui-btn"><img src="menuButton.png" width="20px" height="20px" style="margin-top:4px;"></a>
         </div>
         <!-- /header -->
 
         <div role="main" class="ui-content">
-            <p>메모오오오</p>
-        </div>
+            <div id="mainFlex">
+               <div id="todayReviewTitleText" style="font-size:20px; text-align:center; position:relative;">
+                    <img src="backArrow.png" alt="" width="16px" height="16px" style="position:absolute; margin-left:-76px; margin-top:4px;">
+                    2017년 7월 27일
+                    <img src="nextArrow.png" alt="" width="16px" height="16px" style="position:absolute; margin-left:60px; margin-top:4px;"> 
+                </div>
+                <div>
+                    <div class="card">
+                        <div id="memoTitle">
+                           <div id="memoTitleLeft">2교시 영어</div>
+                           <div id="more">보기</div>
+                       </div>
+                       <div class="memoText" style="margin-top: 26px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum dolorem, saepe quasi rerum mollitia voluptatem nobis, vel distinctio minus amet magnam sit eius eaque cumque iusto aspernatur fugiat magni consequatur excepturi iste commodi autem impedit facilis. Consequatur, enim, rem tempore doloremque quibusdam soluta architecto ullam commodi amet error iure laboriosam! Velit nam distinctio amet reprehenderit aliquid ducimus aperiam, commodi eos, corporis dicta ea, possimus! Nobis vero, amet eveniet debitis ad cum sequi deleniti corporis reprehenderit ipsam accusamus earum, placeat neque aperiam quibusdam possimus recusandae reiciendis maxime facere alias. Quisquamk excepturi vel dignissimos aperiam asperiores, enim, dolorum maxime quos quam odit!</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div id="memoTitle">
+                           <div id="memoTitleLeft">3교시 영어</div>
+                           <div id="more">보기</div>
+                       </div>
+                       <div class="memoText" style="margin-top: 26px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, autem.</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div id="memoTitle">
+                           <div id="memoTitleLeft">4교시 영어</div>
+                           <div id="more">보기</div>
+                       </div>
+                       <div class="memoText" style="margin-top: 26px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo repudiandae, nulla ipsam illum at quaerat ducimus eveniet unde sint blanditiis cupiditate ullam, quae harum! Inventore earum est laboriosam ipsa voluptas eius modi facere, quisquam labore porro, nulla natus veniam esse!</div>
+                    </div>
+                </div>
+            </div>
         <!-- /content -->
-
-        <!-- /footer -->
-    </div>
-
-    <div data-role="page" id="Schedule">
-
-        <div data-role="header">
-            <h1>일저어엉</h1>
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
         </div>
-        <!-- /header -->
-
-        <div role="main" class="ui-content">
-            <p>ㅁㄴ옴ㄴㅇ</p>
-            <p><a href="#bar">Back to bar</a></p>
-        </div>
-        <!-- /content -->
-
         <!-- /footer -->
     </div>
     <!-- /page -->
     <div data-role="page" id="Myinfo">
 
         <div data-role="header">
-            <h1>내 정보</h1>
-            <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Bars</a>
+            <h1 style="text-align:left; margin-left:60px;">내 정보</h1>
+            <a href="#myPanel" class="ui-btn"><img src="menuButton.png" width="20px" height="20px" style="margin-top:4px;"></a>
         </div>
         <!-- /header -->
 
@@ -288,17 +453,14 @@
                 <h2>학교</h2>
                 <p>NULL</p>
             </a>
-            <div data-role="popup" id="popupSchool" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:400px;">
-                <div data-role="header">
-
-                    <h1>아이디</h1>
-                </div>
-
-                <div role="main" class="ui-content">
-                    <h2>학교</h2>
-                    <input type="text" name="School" id="un" value="" placeholder="학교를 입력하세요" data-theme="a">
-                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
-                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+            <div data-role="popup" id="popupSchool" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:300px;">
+                <div class="popuppp">
+                    <div role="main" class="ui-content">
+                        <h1>학교</h1>
+                        <input type="text" name="School" id="un" value="" placeholder="학교를 입력하세요" data-theme="a">
+                        <a href="#" style="color:black;" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
+                        <a href="#" style="color:black;" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+                    </div>
                 </div>
             </div>
             <hr>
@@ -307,18 +469,16 @@
                 <p>NULL</p>
             </a>
             <div data-role="popup" id="popupGrade" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="width:300px;">
-                <div data-role="header">
-
-                    <h1>학년/반 수정</h1>
-                </div>
-
-                <div role="main" class="ui-content">
-                    <h2>학년</h2>
-                    <input type="text" name="grade" id="un" value="" data-theme="a">
-                    <h2>반</h2>
-                    <input type="text" name="class" id="un" value="" data-theme="a">
-                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
-                    <a href="#" style="color:black;"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+                <div class="popuppp">
+                    <div role="main" class="ui-content">
+                        <h1>학년/반 수정</h1>
+                        <h2>학년</h2>
+                        <input type="text" name="grade" id="un" value="" data-theme="a">
+                        <h2>반</h2>
+                        <input type="text" name="class" id="un" value="" data-theme="a">
+                        <a href="#" style="color:black;" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">확인</a>
+                        <a href="#" style="color:black;" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">취소</a>
+                    </div>
                 </div>
             </div>
             <hr>
@@ -342,6 +502,22 @@
         <!-- /content -->
         <!-- /footer -->
     </div>
+    <script>
+        var texts = document.getElementsByClassName("memoText");
+        
+        function shortMemo(memoObject) {
+            var text = memoObject.innerHTML;
+            if(text.length > 300) {
+                memoObject.innerHTML = text.slice(0, 299) + " ...";
+            }
+        }
+        
+        $(document).ready(function() {
+           for(var i = 0; i < texts.length; i++) {
+               shortMemo(texts[i]);
+           }
+        });
+    </script>
 </body>
 
 </html>
