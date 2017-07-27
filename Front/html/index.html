@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
     <style>
         body {
             font-family: "NanumSquare" !important;
@@ -203,47 +204,49 @@
                     <img src="nextArrow.png" alt="" width="16px" height="16px" style="position:absolute; margin-left:60px; margin-top:4px;"> 
                 </div>
                 <div>
-                    <div class="card">
+                    <div class="card" id="20170626">
                        <div id="cardDate">
                            <div id="cardDateLeft">2017년 06월 26일</div>
                            <div id="cardDateRight">저번 달</div>
                        </div>
-                       <div class="reviewComponent" style="margin-top: 26px;">
-                           2교시 영어
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                       <div style="margin-top: 26px;"></div>
+                       <div class="reviewComponent" id="1-2">
+                          2교시 영어
+                          <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="1-3">
                            3교시 자바
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="1-4">
                            4교시 자바
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="1-5">
                            5교시 한국사
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="1-6">
                            6교시 DB
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent" style="margin-bottom: 8px;">
+                       <div class="reviewComponent" id="1-7">
                            7교시 DB
                            <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
-                           <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="uncompleted.png" class="uncompleted" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
+                       <div style="margin-bottom: 8px;"></div>
                     </div>
                     
                     <div class="card">
@@ -251,48 +254,50 @@
                            <div id="cardDateLeft">2017년 07월 19일</div>
                            <div id="cardDateRight">저번 주</div>
                        </div>
-                       <div class="reviewComponent" style="margin-top: 26px;">
+                       <div style="margin-top: 26px;"></div>
+                       <div class="reviewComponent" id="2-1">
                            1교시 문학
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="2-2">
                            2교시 자바
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="2-3">
                            3교시 자바
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="2-4">
                            4교시 영어
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="2-5">
                            5교시 영어
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent">
+                       <div class="reviewComponent" id="2-6">
                            6교시 DB
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
-                       <div class="reviewComponent" style="margin-bottom: 8px;">
+                       <div class="reviewComponent" id="2-7">
                            7교시 직업
-                           <img src="completed.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
-                           <img src="tomorrow.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
+                           <img src="completed.png" class="completed" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 52px">
+                           <img src="tomorrow.png" class="tomorrow" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right: 28px">
                            <img src="uncompleted.png" width="20px" height="20px" style="margin-bottom:-5px; position: absolute; right:4px;">
                        </div>
+                       <div style="margin-bottom: 8px;"></div>
                     </div>
                 </div>
             </div>
@@ -511,6 +516,28 @@
                 memoObject.innerHTML = text.slice(0, 299) + " ...";
             }
         }
+        
+        $(".completed").click(function() {
+            alert("복습을 완료하였습니다.");
+            var parentID = $(this).parent().attr("id");
+            var parent = document.getElementById(parentID);
+            parent.parentNode.removeChild(parent);
+        });
+        
+        $(".tomorrow").click(function() {
+            alert("내일 복습합니다.");
+            var parentID = $(this).parent().attr("id");
+            var parent = document.getElementById(parentID);
+            parent.parentNode.removeChild(parent);
+        });
+        
+        $(".uncompleted").click(function() {
+            alert("복습하지 않습니다.");
+            var parentID = $(this).parent().attr("id");
+            var parent = document.getElementById(parentID);
+            parent.parentNode.removeChild(parent);
+        });
+        
         
         $(document).ready(function() {
            for(var i = 0; i < texts.length; i++) {
